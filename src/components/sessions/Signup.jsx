@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { baseUrl, headers } from '../../GlobalVariables'
+import { useNavigate } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = ({ loginGuest }) => {
   const [ guestName, setGuestName ] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -12,7 +15,10 @@ const Signup = () => {
       body: JSON.stringify({ guestName })
     })
      .then(res => res.json())
-     .then(data => console.log(data))
+     .then(data => {
+      loginGuest(data);
+      navigate('/ingredientsRecipe') //redirect after signup
+    }) 
   }
 
   return (
