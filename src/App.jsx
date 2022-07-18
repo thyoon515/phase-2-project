@@ -12,6 +12,7 @@ import { baseUrl } from "./GlobalVariables";
 function App() {
   const [currentGuest, setCurrentGuest] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   const loginGuest = guest => {
     setCurrentGuest(guest);
@@ -23,6 +24,10 @@ function App() {
     setCurrentGuest({});
     setLoggedIn(false);
     localStorage.removeItem('guest_id');
+  }
+
+  const displayErrors = () => {
+    errors.forEach()
   }
 
 //persist logged in guest
@@ -40,7 +45,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup loginGuest={loginGuest} />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login loginGuest={loginGuest} />} />
         <Route path="/ingredientsRecipe" element={<IngredientsRecipe />} />
         <Route path="/favoriteRecipe" element={<FavoriteRecipe />} />
         <Route path="/randomRecipe" element={<RandomRecipe />} />
