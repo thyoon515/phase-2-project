@@ -2,7 +2,7 @@ import React from 'react';
 
 const RandomRecipe = () => {
   return (
-    <div>RandomRecipe</div>
+    <div>Random Recipes</div>
   );
 }
 
