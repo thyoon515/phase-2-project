@@ -2,23 +2,32 @@ import { useState } from 'react';
 import { baseUrl, headers } from '../../GlobalVariables'
 import { useNavigate } from 'react-router-dom';
 
-const Signup = ({ loginGuest }) => {
+const Signup = ({ loginGuest, guests }) => {
   const [ guestName, setGuestName ] = useState('');
 
   const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetch(baseUrl + '/guests', {
+
+    const guest = guests.find(guest => 
+      guest.guestName.toLowerCase() === guestName.toLowerCase()
+    ); //find matching guestName from db.json
+
+    if(guest) { //if there is matching account name, then send alert message
+      alert("Sorry, it is already taken, try another!")
+    } else {
+      fetch(baseUrl + '/guests', {
       method: "POST",
       headers,
       body: JSON.stringify({ guestName })
-    })
+      })
      .then(res => res.json())
      .then(data => {
       loginGuest(data);
-      navigate('/ingredientsRecipe') //redirect after signup
-    }) 
+      navigate('/ingredientsRecipe') //redirect the page after signup
+      }) 
+    }
   }
 
   return (

@@ -2,13 +2,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { baseUrl } from '../../GlobalVariables';
 
-const Login = ({ loginGuest }) => {
+const Login = ({ loginGuest, guests, setGuests }) => {
 
   const [guestName, setGuestName] = useState("");
-  const [guests, setGuests] = useState([]);
-
+  
   const navigate = useNavigate(0);
-
 
   const handleChange = e => {
     setGuestName(e.target.value);
@@ -24,8 +22,9 @@ const Login = ({ loginGuest }) => {
     if(guest) {
       loginGuest(guest);
       navigate('/ingredientsRecipe'); //redirect page
+    } else {
+      alert("Account name was not found, try another!")//error message
     }
-
   }
 
   useEffect(() => {
@@ -33,7 +32,6 @@ const Login = ({ loginGuest }) => {
      .then(res => res.json())
      .then(data => setGuests(data)) //set guests data with controlled state
   }, [])
-  
 
   return (
     <div>
