@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { baseUrl } from '../../GlobalVariables';
 
-const Login = ({ loginGuest, guests, setGuests }) => {
+const Login = ({ loginGuest, guests, setGuests, loggedIn }) => {
 
   const [guestName, setGuestName] = useState("");
   
-  const navigate = useNavigate(0);
+  const navigate = useNavigate();
 
   const handleChange = e => {
     setGuestName(e.target.value);
@@ -22,16 +22,19 @@ const Login = ({ loginGuest, guests, setGuests }) => {
     if(guest) {
       loginGuest(guest);
       navigate('/ingredientsRecipe'); //redirect page
-    } else {
-      alert("Account name was not found, try another!")//error message
+    } else {//if there is no match, alert error message
+      alert("Account name was not found, try another!")
     }
   }
 
-  useEffect(() => {
+  useEffect(() => {//if guest is already logged in, can not access login page
+    if(loggedIn){
+      return navigate('/ingredientsRecipe')//redirect page
+    }
     fetch(baseUrl + "/guests")
      .then(res => res.json())
      .then(data => setGuests(data)) //set guests data with controlled state
-  }, [])
+  }, [loggedIn])
 
   return (
     <div>

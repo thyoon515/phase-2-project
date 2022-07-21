@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { baseUrl, headers } from '../../GlobalVariables'
 import { useNavigate } from 'react-router-dom';
 
-const Signup = ({ loginGuest, guests }) => {
+const Signup = ({ loginGuest, guests, loggedIn }) => {
   const [ guestName, setGuestName ] = useState('');
 
   const navigate = useNavigate();
@@ -29,6 +29,12 @@ const Signup = ({ loginGuest, guests }) => {
       }) 
     }
   }
+
+  useEffect(() => {//if guest is already logged in, can not access signup page
+    if(loggedIn){
+      return navigate('/ingredientsRecipe')//redirect page
+    }
+  },[loggedIn])
 
   return (
     <div>

@@ -11,7 +11,7 @@ import { baseUrl } from "./GlobalVariables";
 
 function App() {
   const [currentGuest, setCurrentGuest] = useState({});
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);//logged out as initial value
   const [guests, setGuests] = useState([]);
 
   const loginGuest = guest => {
@@ -33,18 +33,18 @@ function App() {
       fetch(baseUrl + '/guests/' + guestId)
         .then(res => res.json())
         .then(data => loginGuest(data))
-  },[])
+  },[loggedIn])
 
   return (
     <Router>
       <NavBar loggedIn={loggedIn} logoutGuest={logoutGuest} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup loginGuest={loginGuest} guests={guests} />} />
-        <Route path="/login" element={<Login loginGuest={loginGuest} guests={guests} setGuests={setGuests} />} />
-        <Route path="/ingredientsRecipe" element={<IngredientsRecipe />} />
-        <Route path="/favoriteRecipe" element={<FavoriteRecipe />} />
-        <Route path="/randomRecipe" element={<RandomRecipe />} />
+        <Route path="/signup" element={<Signup loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} />} />
+        <Route path="/login" element={<Login loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} setGuests={setGuests} />} />
+        <Route path="/ingredientsRecipe" element={<IngredientsRecipe loggedIn={loggedIn} />} />
+        <Route path="/favoriteRecipe" element={<FavoriteRecipe loggedIn={loggedIn} currentGuest={currentGuest} />} />
+        <Route path="/randomRecipe" element={<RandomRecipe loggedIn={loggedIn} />} />
       </Routes>
       
     </Router>

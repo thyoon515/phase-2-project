@@ -1,6 +1,16 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const RandomRecipe = () => {
+const RandomRecipe = ({ loggedIn }) => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!loggedIn){
+      navigate('/login')
+    }
+  }, [loggedIn])
+
   return (
     <div>Random Recipes</div>
   );
