@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const IngredientsRecipe = ({ loggedIn }) => {
+const FindRecipe = ({ loggedIn }) => {
 
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if(!loggedIn){
       navigate('/login')//redirect to login page after logging out
@@ -12,8 +12,13 @@ const IngredientsRecipe = ({ loggedIn }) => {
   }, [loggedIn])
 
   return (
-    <div>Ingredients Recipe</div>
+    <div>
+      <form>
+        <label htmlFor="search" className="search">Search: </label>
+        <input type="text" className="search" />
+      </form>
+    </div>
   );
 }
 
-export default IngredientsRecipe;
+export default FindRecipe;

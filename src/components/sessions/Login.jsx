@@ -21,7 +21,7 @@ const Login = ({ loginGuest, guests, setGuests, loggedIn }) => {
     
     if(guest) {
       loginGuest(guest);
-      navigate('/ingredientsRecipe'); //redirect page
+      navigate('/findRecipe'); //redirect page
     } else {//if there is no match, alert error message
       alert("Account name was not found, try another!")
     }
@@ -29,7 +29,7 @@ const Login = ({ loginGuest, guests, setGuests, loggedIn }) => {
 
   useEffect(() => {//if guest is already logged in, can not access login page
     if(loggedIn){
-      return navigate('/ingredientsRecipe')//redirect page
+      return navigate('/findRecipe')//redirect page
     }
     fetch(baseUrl + "/guests")
      .then(res => res.json())

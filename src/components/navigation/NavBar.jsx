@@ -12,9 +12,9 @@ const NavBar = ({ loggedIn, logoutGuest }) => {
     return(
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/ingredientsRecipe">Ingredients to Recipe</Link></li>
-        <li><Link to="/favoriteRecipe">Favorite Recipes</Link></li>
+        <li><Link to="/findRecipe">Find Recipe</Link></li>
         <li><Link to="/randomRecipe">Random Recipes</Link></li>
+        <li><Link to="/favoriteRecipe">Favorite Recipes</Link></li>
         <li><a href='#' onClick={ logout }>Logout</a></li>
       </ul>
     )

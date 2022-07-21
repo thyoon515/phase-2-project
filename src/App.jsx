@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navigation/NavBar";
 import FavoriteRecipe from "./components/Recipes/FavoriteRecipe";
-import IngredientsRecipe from "./components/Recipes/IngredientsRecipe";
+import FindRecipe from "./components/Recipes/FindRecipe";
 import RandomRecipe from "./components/Recipes/RandomRecipe";
 import Login from "./components/sessions/Login";
 import Signup from "./components/sessions/Signup";
@@ -42,7 +42,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} />} />
         <Route path="/login" element={<Login loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} setGuests={setGuests} />} />
-        <Route path="/ingredientsRecipe" element={<IngredientsRecipe loggedIn={loggedIn} />} />
+        <Route path="/findRecipe" element={<FindRecipe loggedIn={loggedIn} />} />
         <Route path="/favoriteRecipe" element={<FavoriteRecipe loggedIn={loggedIn} currentGuest={currentGuest} />} />
         <Route path="/randomRecipe" element={<RandomRecipe loggedIn={loggedIn} />} />
       </Routes>
