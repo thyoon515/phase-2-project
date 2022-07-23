@@ -12,9 +12,9 @@ const NavBar = ({ loggedIn, logoutGuest }) => {
     return(
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/findRecipe">Find Recipe</Link></li>
-        <li><Link to="/randomRecipe">Random Recipes</Link></li>
-        <li><Link to="/favoriteRecipe">Favorite Recipes</Link></li>
+        <li><Link to="/enterZipcode">Enter Zipcode</Link></li>
+        <li><Link to="/stateCityToZip">State/City To Zipcode</Link></li>
+        <li><Link to="/myList">My List</Link></li>
         <li><a href='#' onClick={ logout }>Logout</a></li>
       </ul>
     )
@@ -32,7 +32,7 @@ const NavBar = ({ loggedIn, logoutGuest }) => {
 
   return (
     <div>
-      <h3>Fridge Served</h3>
+      <h3>Locate Zipcode</h3>
       { loggedIn ? loggedInLinks() : loggedOutLinks() }
     </div>
   );

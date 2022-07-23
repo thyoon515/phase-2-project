@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const FavoriteRecipe = ({ currentGuest, loggedIn }) => {
+const MyList = ({ currentGuest, loggedIn }) => {
 
   const navigate = useNavigate();
 
@@ -10,14 +10,14 @@ const FavoriteRecipe = ({ currentGuest, loggedIn }) => {
     if(!loggedIn){
       navigate('/login')
     }
-  }, [loggedIn])
+  }, [navigate, loggedIn])
   
 
   return (
     <div>
-      <h1>{currentGuest.guestName}'s Favorite Recipe</h1>
+      <h1>{currentGuest.guestName}'s List</h1>
     </div>
   );
 }
 
-export default FavoriteRecipe;
+export default MyList;

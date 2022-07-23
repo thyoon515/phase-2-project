@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const RandomRecipe = ({ loggedIn }) => {
+const StateCityToZip = ({ loggedIn }) => {
 
   const navigate = useNavigate();
 
@@ -9,11 +9,14 @@ const RandomRecipe = ({ loggedIn }) => {
     if(!loggedIn){
       navigate('/login')
     }
-  }, [loggedIn])
+  }, [navigate, loggedIn])
+
 
   return (
-    <div>Random Recipes</div>
+    <div>
+      <h1>Zipcode</h1>
+    </div>
   );
 }
 
-export default RandomRecipe;
+export default StateCityToZip;

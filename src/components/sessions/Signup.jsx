@@ -25,16 +25,16 @@ const Signup = ({ loginGuest, guests, loggedIn }) => {
      .then(res => res.json())
      .then(data => {
       loginGuest(data);
-      navigate('/findRecipe') //redirect the page after signup
+      navigate('/enterZipcode') //redirect the page after signup
       }) 
     }
   }
 
   useEffect(() => {//if guest is already logged in, can not access signup page
     if(loggedIn){
-      return navigate('/findRecipe')//redirect page
+      return navigate('/enterZipcode')//redirect page
     }
-  },[loggedIn])
+  },[navigate, loggedIn])
 
   return (
     <div>

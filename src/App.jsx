@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navigation/NavBar";
-import FavoriteRecipe from "./components/Recipes/FavoriteRecipe";
-import FindRecipe from "./components/Recipes/FindRecipe";
-import RandomRecipe from "./components/Recipes/RandomRecipe";
+import MyList from "./components/Zipcode/MyList";
+import EnterZipcode from "./components/Zipcode/EnterZipcode";
+import StateCityToZip from "./components/Zipcode/StateCityToZip";
 import Login from "./components/sessions/Login";
 import Signup from "./components/sessions/Signup";
 import Home from "./components/static/Home";
@@ -35,6 +35,11 @@ function App() {
         .then(data => loginGuest(data))
   },[loggedIn])
 
+  useEffect(() => {
+   
+  }, [])
+
+
   return (
     <Router>
       <NavBar loggedIn={loggedIn} logoutGuest={logoutGuest} />
@@ -42,9 +47,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} />} />
         <Route path="/login" element={<Login loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} setGuests={setGuests} />} />
-        <Route path="/findRecipe" element={<FindRecipe loggedIn={loggedIn} />} />
-        <Route path="/favoriteRecipe" element={<FavoriteRecipe loggedIn={loggedIn} currentGuest={currentGuest} />} />
-        <Route path="/randomRecipe" element={<RandomRecipe loggedIn={loggedIn} />} />
+        <Route path="/enterZipcode" element={<EnterZipcode loggedIn={loggedIn} />} />
+        <Route path="/stateCityToZip" element={<StateCityToZip loggedIn={loggedIn} />} />
+        <Route path="/myList" element={<MyList loggedIn={loggedIn} currentGuest={currentGuest} />} />
       </Routes>
       
     </Router>
