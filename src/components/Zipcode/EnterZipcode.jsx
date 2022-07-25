@@ -1,38 +1,57 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ZipcodeCard from './ZipcodeCard';
 
 const EnterZipcode = ({ loggedIn }) => {
 
-  const [zipcode, setZipcode] = useState([])
-  const [location, setLocation] = useState({})
-
+  const [zipcode, setZipcode] = useState("");
+  const [location, setLocation] = useState([]);
+  const [error, setError] = useState(null)
+  
   const navigate = useNavigate();
 
+  
   useEffect(() => {
     if(!loggedIn){
       navigate('/login')//redirect to login page after logging out
     }
   }, [navigate, loggedIn])
-
+  
   const handleZipcode = (e) => {
-    e.preventDefault();
     setZipcode(e.target.value)
+    console.log(zipcode)
   }
 
-  useEffect(() => {
-    fetch(`http://api.zippopotam.us/us/${zipcode}`)
-      .then(res => res.json())
-      .then(data => setLocation(data))
-  },[zipcode, location])
-
-
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const formData = {zipcode}
+    fetch(`http://api.zippopotam.us/us/${formData.zipcode}`)
+      .then(res => {
+        if(!res.ok){
+          throw Error('result not found, try another')
+        }
+        return res.json()})
+      .then(data => {
+        setLocation(data.places)
+        setError(null)
+      })
+      .catch(error => {
+       setError(error.message)
+      })
+      
+  }
+  
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="zipcode" className="zipcode">Zipcode: </label>
-        <input type="number" className="zipcode" onChange={handleZipcode}/>
-        <button>Enter</button>
+        <input type="number" className="zipcode" value={zipcode} onChange={handleZipcode}/>
+        <button type='submit'>Enter</button>
       </form>
+      <div>
+        { error ? <h1>{ error} </h1> : <ZipcodeCard key={zipcode} location={location} /> }
+      </div>
     </div>
   );
 }
