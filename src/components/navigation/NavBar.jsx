@@ -13,8 +13,6 @@ const NavBar = ({ loggedIn, logoutGuest }) => {
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/enterZipcode">Enter Zipcode</Link></li>
-        <li><Link to="/stateCityToZip">State/City To Zipcode</Link></li>
-        <li><Link to="/myList">My List</Link></li>
         <li><a href='#' onClick={ logout }>Logout</a></li>
       </ul>
     )

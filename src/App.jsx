@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navigation/NavBar";
-import MyList from "./components/Zipcode/MyList";
 import EnterZipcode from "./components/Zipcode/EnterZipcode";
-import StateCityToZip from "./components/Zipcode/StateCityToZip";
 import Login from "./components/sessions/Login";
 import Signup from "./components/sessions/Signup";
 import Home from "./components/static/Home";
@@ -48,8 +46,6 @@ function App() {
         <Route path="/signup" element={<Signup loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} />} />
         <Route path="/login" element={<Login loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} setGuests={setGuests} />} />
         <Route path="/enterZipcode" element={<EnterZipcode loggedIn={loggedIn} />} />
-        <Route path="/stateCityToZip" element={<StateCityToZip loggedIn={loggedIn} />} />
-        <Route path="/myList" element={<MyList loggedIn={loggedIn} currentGuest={currentGuest} />} />
       </Routes>
       
     </Router>

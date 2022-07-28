@@ -22,7 +22,6 @@ const EnterZipcode = ({ loggedIn }) => {
     console.log(zipcode)
   }
 
-  
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = {zipcode}
@@ -37,9 +36,9 @@ const EnterZipcode = ({ loggedIn }) => {
         setError(null)
       })
       .catch(error => {
-       setError(error.message)
+        setError(error.message)
       })
-      
+    setZipcode("")
   }
   
   return (
@@ -50,7 +49,7 @@ const EnterZipcode = ({ loggedIn }) => {
         <button type='submit'>Enter</button>
       </form>
       <div>
-        { error ? <h1>{ error} </h1> : <ZipcodeCard key={zipcode} location={location} /> }
+        { error ? <h1> {error} </h1> : <ZipcodeCard key={zipcode} location={location} /> }
       </div>
     </div>
   );

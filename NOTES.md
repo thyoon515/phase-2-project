@@ -1,6 +1,6 @@
 # Overview
 
-Don't know what to do with the left over ingredients in your fridge? Look up recipe by ingreidents. If you like it, you can add it to your favorite list.
+
 
 ### MVP
 - Signup / Login
