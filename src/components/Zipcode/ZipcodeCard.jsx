@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 const ZipcodeCard = ({ location }) => {
 
   const displayState = location.map(location => {
-    
     return(
         <h1 key={location.state}>State: {location.state}</h1>
     )
@@ -23,4 +22,4 @@ const ZipcodeCard = ({ location }) => {
   )
 }
 
-export default ZipcodeCard
+export default ZipcodeCard;
