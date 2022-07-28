@@ -12,7 +12,6 @@ const EnterZipcode = ({ loggedIn }) => {
   const [error, setError] = useState(null)
   
   const navigate = useNavigate();
-
   
   useEffect(() => {
     if(!loggedIn){
@@ -22,7 +21,6 @@ const EnterZipcode = ({ loggedIn }) => {
   
   const handleZipcode = (e) => {
     setZipcode(e.target.value)
-    console.log(zipcode)
   }
 
   const handleSubmit = (e) => {
