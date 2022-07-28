@@ -28,7 +28,7 @@ const EnterZipcode = ({ loggedIn }) => {
     fetch(`http://api.zippopotam.us/us/${formData.zipcode}`)
       .then(res => {
         if(!res.ok){
-          throw Error('result not found, try another')
+          throw Error('Invalid zipcode, try another')
         }
         return res.json()})
       .then(data => {

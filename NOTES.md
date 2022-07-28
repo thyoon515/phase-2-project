@@ -1,14 +1,9 @@
 # Overview
 
-
+Find the location(State and City) of a zipcode.
 
 ### MVP
 - Signup / Login
-- List of recipes
-- Adding recipes to your favorite recipe list
-
-### Stretch Goals
-- Random Recipe
 
 ### Requirements
 
@@ -17,14 +12,14 @@
 2. NavBar
 3. Signup
 4. Login
-5. Recipe List
-6. Favorite Recipe List
+5. Enter Zipcode
+6. Zipcode Card
 
 *Must have 3 client-side-routes
 1. / = Home
 2. /signup = Signup
 3. /login = Login
-4. /recipe = Recipe List
-5. /favoriteRecipe = Favorite Recipe List
+4. /enterZipcode = Find location of a zipcode
+
 
 
