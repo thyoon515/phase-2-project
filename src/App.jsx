@@ -37,7 +37,6 @@ function App() {
    
   }, [])
 
-
   return (
     <Router>
       <NavBar loggedIn={loggedIn} logoutGuest={logoutGuest} />

@@ -4,7 +4,6 @@ import ZipcodeCard from './ZipcodeCard';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 
-
 const EnterZipcode = ({ loggedIn }) => {
 
   const [zipcode, setZipcode] = useState("");
