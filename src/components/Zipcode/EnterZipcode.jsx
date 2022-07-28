@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ZipcodeCard from './ZipcodeCard';
+import Input from '@mui/material/Input';
+import Button from '@mui/material/Button';
+
 
 const EnterZipcode = ({ loggedIn }) => {
 
@@ -42,11 +45,11 @@ const EnterZipcode = ({ loggedIn }) => {
   }
   
   return (
-    <div>
+    <div align="center">
+      <h1>Locate Zipcode</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="zipcode" className="zipcode">Zipcode: </label>
-        <input type="number" className="zipcode" value={zipcode} onChange={handleZipcode}/>
-        <button type='submit'>Enter</button>
+        <Input placeholder='Enter Zipcode Here' type="number" value={zipcode} onChange={handleZipcode}/>
+        <Button variant="contained" type='submit'>Enter</Button>
       </form>
       <div>
         { error ? <h1> {error} </h1> : <ZipcodeCard key={zipcode} location={location} /> }

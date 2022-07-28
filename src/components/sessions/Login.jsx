@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { baseUrl } from '../../GlobalVariables';
+import Input from '@mui/material/Input';
+import Button from '@mui/material/Button';
 
 const Login = ({ loginGuest, guests, setGuests, loggedIn }) => {
 
@@ -25,6 +27,7 @@ const Login = ({ loginGuest, guests, setGuests, loggedIn }) => {
     } else {//if there is no match, alert error message
       alert("Account name was not found, try another!")
     }
+    setGuestName("")
   }
 
   useEffect(() => {//if guest is already logged in, can not access login page
@@ -34,23 +37,24 @@ const Login = ({ loginGuest, guests, setGuests, loggedIn }) => {
     fetch(baseUrl + "/guests")
      .then(res => res.json())
      .then(data => setGuests(data)) //set guests data with controlled state
-  }, [loggedIn])
+  }, [loggedIn, navigate, setGuests])
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div align="center">
+      <h1>Please Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="guestName">Account Name: </label>
-          <input 
+          <Input 
             type="text" 
             name='guestName' 
             id='guestName' 
             onChange={handleChange} 
-            value={guestName} 
+            value={guestName}
+            placeholder="Enter Here" 
           />
+          <Button variant="contained" type='submit'>Login</Button>
         </div>
-        <input type="submit" value="Login" />
       </form>
     </div>
   );
