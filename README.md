@@ -90,6 +90,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Credit
 - API : [Zippopotam.us](https://api.zippopotam.us/)
 - Flatiron School : [FlatironSchool](https://flatironschool.com/)
+- GIF : [Video-to-gif](https://ezgif.com/video-to-gif)
 - Locate Zipcode Banner : [Banner Maker](https://banner.godori.dev)
 - Material UI : [MUI](https://mui.com/)
 - React : [Reactjs](https://reactjs.org/)
