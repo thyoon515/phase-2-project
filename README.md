@@ -82,3 +82,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Credit
+- API : [Zippopotam.us](https://api.zippopotam.us/)
+- Flatiron School : [FlatironSchool](https://flatironschool.com/)
+- Locate Zipcode Banner : [Banner Maker](https://banner.godori.dev)
+- Material UI : [MUI](https://mui.com/)
