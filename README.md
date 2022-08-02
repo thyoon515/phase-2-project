@@ -1,5 +1,11 @@
 # ![](Locate_Zipcode.png)
 
+Find City and State for a Zipcode.
+
+### Description
+
+Locate Zipcode is a Single Page Application built with React components. It is design to locate city and state of a zipcode with public API. To use the app, a user must create an account and login. It tracks user's account name with built in mock data storage, db.json. It is simple and convenient app to find the location of a zipcode. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
