@@ -1,84 +1,8 @@
 {
   "guests": [
     {
-      "guestName": "hellothere",
+      "guestName": "Storm",
       "id": 1
-    },
-    {
-      "guestName": "asdfadsfadf",
-      "id": 2
-    },
-    {
-      "guestName": "Thunder",
-      "id": 3
-    },
-    {
-      "guestName": "Storm",
-      "id": 4
-    },
-    {
-      "guestName": "hellothere",
-      "id": 5
-    },
-    {
-      "guestName": "hellothere1",
-      "id": 6
-    },
-    {
-      "guestName": "storm 2",
-      "id": 7
-    },
-    {
-      "guestName": "hellothere33",
-      "id": 8
-    },
-    {
-      "guestName": "youyouyou",
-      "id": 9
-    },
-    {
-      "guestName": "signup2",
-      "id": 10
-    },
-    {
-      "guestName": "Storm",
-      "id": 11
-    },
-    {
-      "guestName": "Storm",
-      "id": 12
-    },
-    {
-      "guestName": "Storm",
-      "id": 13
-    },
-    {
-      "guestName": "HelloWorld",
-      "id": 14
-    },
-    {
-      "guestName": "Taehoon",
-      "id": 15
-    },
-    {
-      "guestName": "David",
-      "id": 16
-    },
-    {
-      "guestName": "David123",
-      "id": 17
-    },
-    {
-      "guestName": "Sky123",
-      "id": 18
-    },
-    {
-      "guestName": "Tae123",
-      "id": 19
-    },
-    {
-      "guestName": "Tae12",
-      "id": 20
     }
   ]
 }
