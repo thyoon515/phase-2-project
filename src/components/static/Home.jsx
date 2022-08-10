@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Home = () => {
+  
   return (
     <div align="center">
       <h1>Welcome to Locate Zipcode 😄</h1>

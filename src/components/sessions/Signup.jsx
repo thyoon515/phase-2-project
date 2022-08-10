@@ -5,6 +5,7 @@ import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 
 const Signup = ({ loginGuest, guests, loggedIn }) => {
+  
   const [ guestName, setGuestName ] = useState('');
 
   const navigate = useNavigate();

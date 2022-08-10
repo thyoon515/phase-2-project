@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 
 const Login = ({ loginGuest, guests, setGuests, loggedIn }) => {
 
-  const [guestName, setGuestName] = useState("");
+  const [ guestName, setGuestName ] = useState("");
   
   const navigate = useNavigate();
 

@@ -24,8 +24,7 @@ const EnterZipcode = ({ loggedIn, currentGuest }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const formData = {zipcode}
-    fetch(`http://api.zippopotam.us/us/${formData.zipcode}`)
+    fetch(`http://api.zippopotam.us/us/${zipcode}`)
       .then(res => {
         if(!res.ok){
           throw Error('Invalid zipcode, try another')

@@ -8,6 +8,7 @@ import Home from "./components/static/Home";
 import { baseUrl } from "./GlobalVariables";
 
 function App() {
+
   const [currentGuest, setCurrentGuest] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);//logged out as initial value
   const [guests, setGuests] = useState([]);
@@ -33,8 +34,6 @@ function App() {
         .then(data => loginGuest(data))
   },[loggedIn])
 
-  console.log(currentGuest)
-
   return (
     <Router>
       <NavBar loggedIn={loggedIn} logoutGuest={logoutGuest} />
@@ -44,7 +43,6 @@ function App() {
         <Route path="/login" element={<Login loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} setGuests={setGuests} />} />
         <Route path="/enterZipcode" element={<EnterZipcode loggedIn={loggedIn} currentGuest={currentGuest} />} />
       </Routes>
-      
     </Router>
   );
 }
