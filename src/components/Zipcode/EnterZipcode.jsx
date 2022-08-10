@@ -4,7 +4,7 @@ import ZipcodeCard from './ZipcodeCard';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 
-const EnterZipcode = ({ loggedIn }) => {
+const EnterZipcode = ({ loggedIn, currentGuest }) => {
 
   const [zipcode, setZipcode] = useState("");
   const [location, setLocation] = useState([]);
@@ -43,7 +43,8 @@ const EnterZipcode = ({ loggedIn }) => {
   
   return (
     <div align="center">
-      <h1>Locate Zipcode</h1>
+      <h1>Welcome, {currentGuest.guestName}!</h1>
+      <h2>⬇️ Enter Zipcode Below ⬇️</h2>
       <form onSubmit={handleSubmit}>
         <Input placeholder='Enter Zipcode Here' type="number" value={zipcode} onChange={handleZipcode}/>
         <Button variant="contained" type='submit'>Enter</Button>

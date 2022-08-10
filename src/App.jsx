@@ -33,9 +33,7 @@ function App() {
         .then(data => loginGuest(data))
   },[loggedIn])
 
-  useEffect(() => {
-   
-  }, [])
+  console.log(currentGuest)
 
   return (
     <Router>
@@ -44,7 +42,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} />} />
         <Route path="/login" element={<Login loggedIn={loggedIn} loginGuest={loginGuest} guests={guests} setGuests={setGuests} />} />
-        <Route path="/enterZipcode" element={<EnterZipcode loggedIn={loggedIn} />} />
+        <Route path="/enterZipcode" element={<EnterZipcode loggedIn={loggedIn} currentGuest={currentGuest} />} />
       </Routes>
       
     </Router>
